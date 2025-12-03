@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <i class="fas fa-paw"></i>
+                <span>PetCare</span>
+            </div>
+            
+            <div class="user-info">
+                <div class="profile-item">Pepper's profile</div>
+                <div class="logout"><i class="fas fa-sign-out-alt"></i> logout</div>
+            </div>
+            
+            <div class="nav-section">
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-medical"></i> Medical Records
+                </a>
+                <div class="sub-nav">-Upload/view vaccines</div>
+                <div class="sub-nav">-View Perscriptions</div>
+                
+                <a href="#" class="nav-item">
+                    <i class="fas fa-syringe"></i> Vaccinations
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-plus-circle"></i> Add Record
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-bell"></i> Notifications
+                </a>
+            </div>
+            
+            <div class="bottom-nav">
+                <a href="profile.html" class="bottom-item">
+                    <i class="fas fa-th-large"></i> Dashboard
+                </a>
+                <a href="#" class="bottom-item">
+                    <i class="fas fa-address-book"></i> Conact Us
+                </a>
+                <a href="#" class="bottom-item">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+                <a href="#" class="bottom-item">
+                    <i class="fas fa-question-circle"></i> Help?
+                </a>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Pet Photo Area -->
+            <div class="pet-photo-section">
+                <div class="pet-photo-box">
+                    <div class="pet-photo">
+                        <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400&q=80" alt="Golden Retriever">
+                    </div>
+                    <div class="photo-label">Pepper - Golden Retriever</div>
+                </div>
+            </div>
+            
+            <!-- Pet Info -->
+            <div class="pet-info-section">
+                <div class="info-row">
+                    <span class="label">Name:</span>
+                    <span class="value">Pepper</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Breed:</span>
+                    <span class="value">Golden Retriever</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Date of Birth:</span>
+                    <span class="value">15/03/2019</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Age:</span>
+                    <span class="value">5 years</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Weight:</span>
+                    <span class="value">28.5 kg</span>
+                </div>
+                
+                <button class="edit-btn">
+                    <i class="fas fa-edit"></i> Edit Info
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
