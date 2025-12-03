@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare+ | Calendar & Reminders</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand border border-dark p-2" href="#"><strong>PetCare+</strong></a>
+            <button class="btn btn-outline-dark rounded-pill ml-auto" type="button">Logout</button>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <div class="text-center mb-4">
+            <h1 class="display-5">Calendar & Reminders</h1>
+            <h3 class="month-header mt-3">NOVEMBER 2025</h3>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered calendar-table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                        <th>Saturday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-muted">26</td>
+                        <td class="text-muted">27</td>
+                        <td class="text-muted">28</td>
+                        <td class="text-muted">29</td>
+                        <td class="text-muted">30</td>
+                        <td class="text-muted">
+                            31
+                            <span class="dot dot-green" title="Pepper's Haircut"></span>
+                        </td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>
+                            19
+                            <span class="dot dot-green"></span>
+                            <div class="event-badge badge-appointment">Appointment</div>
+                        </td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>
+                            28
+                            <span class="dot dot-orange"></span>
+                            <div class="event-badge badge-reminder">Reminder</div>
+                        </td>
+                        <td>29</td>
+                    </tr>
+                     <tr>
+                        <td>30</td>
+                        <td class="text-muted">1</td>
+                        <td class="text-muted">2</td>
+                        <td class="text-muted">3</td>
+                        <td class="text-muted">4</td>
+                        <td class="text-muted">5</td>
+                        <td class="text-muted">6</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col-md-8">
+                <ul class="list-unstyled event-legend">
+                    <li><strong>Nov 19</strong> &rightarrow; Pepper's Vet appointment</li>
+                    <li><strong>Oct 31</strong> &rightarrow; Pepper's Haircut</li>
+                    <li><strong>Nov 28</strong> &rightarrow; Flea medication reminder</li>
+                </ul>
+            </div>
+            <div class="col-md-4 d-flex align-items-center justify-content-md-end">
+                <button type="button" class="btn btn-outline-dark rounded-pill px-4" data-toggle="modal" data-target="#reminderModal">
+                    Add Reminder
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light border-top">
+        <div class="container text-center">
+            <nav class="nav justify-content-center">
+                <a class="nav-link text-blue footer-link" href="#">Dashboard</a>
+                <a class="nav-link text-blue footer-link" href="#">Contact Us</a>
+                <a class="nav-link text-blue footer-link" href="#">About</a>
+                <a class="nav-link text-blue footer-link" href="#">Help</a>
+            </nav>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="reminderModal" tabindex="-1" role="dialog" aria-labelledby="reminderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reminderModalLabel">Add New Reminder</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="reminderTitle">Title</label>
+                            <input type="text" class="form-control" id="reminderTitle" placeholder="e.g. Vet Visit">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="reminderDate">Date</label>
+                                <input type="date" class="form-control" id="reminderDate">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="reminderTime">Time</label>
+                                <input type="time" class="form-control" id="reminderTime">
+                            </div>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="notificationCheck">
+                            <label class="form-check-label" for="notificationCheck">Enable Notification</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Reminder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

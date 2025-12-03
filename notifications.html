@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare+ | Notifications</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand border border-dark p-2" href="index.html"><strong>PetCare+</strong></a>
+            <button class="btn btn-outline-dark rounded-pill ml-auto" type="button">Logout</button>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        
+        <div class="d-flex align-items-center justify-content-between mb-4 header-row">
+            <div class="d-flex align-items-center">
+                <a href="index.html" class="text-dark mr-3 back-arrow" title="Go Back">
+                    &#8592; </a>
+                
+                <svg width="40" height="40" viewBox="0 0 16 16" class="bi bi-bell mr-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
+                    <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                </svg>
+
+                <h1 class="display-5">Notifications</h1>
+            </div>
+            
+            <div>
+                <a href="#" class="text-dark mark-read-link">Mark all as read</a>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered notification-table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col" style="width: 20%;">Title</th>
+                        <th scope="col" style="width: 40%;">Details</th>
+                        <th scope="col" style="width: 40%;">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="align-middle font-weight-bold">Grooming</td>
+                        <td class="align-middle">Oct 31, 12pm</td>
+                        <td class="align-middle">
+                            <div class="action-buttons">
+                                <button class="btn btn-outline-dark rounded-pill btn-sm mr-1">View</button>
+                                <button class="btn btn-outline-secondary rounded-pill btn-sm mr-1">Dismiss</button>
+                                <div class="w-100 d-block d-md-none mb-1"></div> <button class="btn btn-outline-dark rounded-pill btn-sm mt-1 mt-md-0">Reschedule</button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td class="align-middle font-weight-bold">Vet</td>
+                        <td class="align-middle">Nov 19, 2pm</td>
+                        <td class="align-middle">
+                            <div class="action-buttons">
+                                <button class="btn btn-outline-dark rounded-pill btn-sm mr-1">View</button>
+                                <button class="btn btn-outline-secondary rounded-pill btn-sm mr-1">Dismiss</button>
+                                <div class="w-100 d-block d-md-none mb-1"></div>
+                                <button class="btn btn-outline-dark rounded-pill btn-sm mt-1 mt-md-0">Reschedule</button>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-middle font-weight-bold">Medication</td>
+                        <td class="align-middle">
+                            Flea medication<br>
+                            <span class="text-muted">Nov 28, 8am</span>
+                        </td>
+                        <td class="align-middle">
+                            <div class="action-buttons">
+                                <button class="btn btn-outline-dark rounded-pill btn-sm mr-1">View</button>
+                                <button class="btn btn-outline-secondary rounded-pill btn-sm mr-1">Dismiss</button>
+                                <div class="w-100 d-block d-md-none mb-1"></div>
+                                <button class="btn btn-outline-dark rounded-pill btn-sm mt-1 mt-md-0">Reschedule</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-light border-top fixed-bottom-md">
+        <div class="container text-center">
+            <nav class="nav justify-content-center">
+                <a class="nav-link text-blue footer-link" href="#">Dashboard</a>
+                <a class="nav-link text-blue footer-link" href="#">Contact Us</a>
+                <a class="nav-link text-blue footer-link" href="#">About</a>
+                <a class="nav-link text-blue footer-link" href="#">Help</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
