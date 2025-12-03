@@ -6,148 +6,308 @@
     <title>Book Appointment</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+    
+        .radio-group {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border-radius: 25px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+        
+        .radio-option:hover {
+            background: #f0f7ff;
+            border-color: #4a90e2;
+        }
+        
+        /* Hide default radio */
+        .radio-option input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        
+        /* Custom radio circle */
+        .radio-custom {
+            position: relative;
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+            background: white;
+            border: 2px solid #999;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        /* Radio checked state */
+        .radio-option input:checked ~ .radio-custom {
+            border-color: #4a90e2;
+            background: #4a90e2;
+        }
+        
+        .radio-option input:checked ~ .radio-custom::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+        }
+        
+        .radio-option input:checked ~ span {
+            color: #4a90e2;
+            font-weight: 600;
+        }
+        
+        .radio-option span {
+            color: #333;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+    
+        .radio-option {
+            cursor: pointer;
+        }
+        
+        /* Rest of appointment page styles */
+        .appointment-form-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .page-title {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        
+        .confirm-btn {
+            width: 100%;
+            padding: 15px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .confirm-btn:hover {
+            background: #3a7bc8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+        }
+    </style>
 </head>
 <body>
-    <div class="page-wrapper">
-        <!-- Header -->
-        <div class="appointment-header">
-            <div class="appointment-logo">
-                <i class="fas fa-paw"></i>
-                <span>PetCare</span>
-            </div>
-            <div class="appointment-title">Book Appointment</div>
-            <div class="appointment-logout">
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <div class="nav-logo">
+            <i class="fas fa-paw"></i>
+            <span>PetCare+</span>
+        </div>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="appointment.html" class="active">Appointment</a>
+            <a href="calendar_and_reminders.html">Calendar</a>
+            <a href="notifications.html">Notifications</a>
+        </div>
+        <div class="nav-user">
+            <span>Bahar</span>
+            <a href="login.html" style="color: #dc3545; text-decoration: none;">
                 <i class="fas fa-sign-out-alt"></i> Logout
-            </div>
-        </div>
-        
-        <!-- Appointment Form -->
-        <div class="appointment-form-container">
-            <!-- Service Type -->
-            <div class="form-section">
-                <h3 class="section-title">
-                    <i class="fas fa-stethoscope"></i> Select Service Type:
-                </h3>
-                <div class="radio-group">
-                    <label class="radio-option">
-                        <input type="radio" name="service" value="vet" checked>
-                        <span class="radio-label">
-                            <i class="fas fa-user-md"></i> Vet
-                        </span>
-                    </label>
-                    <label class="radio-option">
-                        <input type="radio" name="service" value="grooming">
-                        <span class="radio-label">
-                            <i class="fas fa-bath"></i> Grooming
-                        </span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Provider Selection -->
-            <div class="form-section">
-                <h3 class="section-title">
-                    <i class="fas fa-clinic-medical"></i> Choose Provider
-                </h3>
-                <div class="radio-group">
-                    <label class="radio-option">
-                        <input type="radio" name="provider" value="richmond" checked>
-                        <span class="radio-label">
-                            <i class="fas fa-map-marker-alt"></i> Richmond Hill Petcane
-                        </span>
-                    </label>
-                    <label class="radio-option">
-                        <input type="radio" name="provider" value="northyork">
-                        <span class="radio-label">
-                            <i class="fas fa-map-marker-alt"></i> North York Petcane
-                        </span>
-                    </label>
-                    <label class="radio-option">
-                        <input type="radio" name="provider" value="toronto">
-                        <span class="radio-label">
-                            <i class="fas fa-map-marker-alt"></i> Toronto Pet Care
-                        </span>
-                    </label>
-                </div>
-            </div>
-            
-            <!-- Date & Time -->
-            <div class="form-section">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label><i class="fas fa-calendar-alt"></i> Choose a Date:</label>
-                        <input type="date" class="date-input">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fas fa-clock"></i> Select Time:</label>
-                        <select class="time-select">
-                            <option>9:00 AM</option>
-                            <option>10:00 AM</option>
-                            <option>11:00 AM</option>
-                            <option>1:00 PM</option>
-                            <option>2:00 PM</option>
-                            <option>3:00 PM</option>
-                            <option>4:00 PM</option>
-                            <option>5:00 PM</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Special Notes -->
-            <div class="form-section">
-                <h3 class="section-title">
-                    <i class="fas fa-edit"></i> Special Notes:
-                </h3>
-                <textarea class="notes-input" placeholder="message..."></textarea>
-            </div>
-            
-            <!-- Confirm Button -->
-            <div class="form-section">
-                <button class="confirm-btn" onclick="showConfirmation()">
-                    <i class="fas fa-calendar-check"></i> confirm
-                </button>
-            </div>
-        </div>
-        
-        <!-- Bottom Navigation -->
-        <div class="appointment-bottom-nav">
-            <a href="profile.html" class="appointment-nav-link">
-                <i class="fas fa-th-large"></i> Dashboard
             </a>
-            <a href="#" class="appointment-nav-link">
-                <i class="fas fa-address-book"></i> Contact Us
-            </a>
-            <a href="#" class="appointment-nav-link">
-                <i class="fas fa-info-circle"></i> About
-            </a>
-            <a href="#" class="appointment-nav-link">
-                <i class="fas fa-question-circle"></i> Help?
-            </a>
-        </div>
-        
-        <!-- Confirmation Popup -->
-        <div class="confirmation-popup" id="confirmationPopup">
-            <div class="popup-content">
-                <div class="popup-icon">
-                    <i class="fas fa-check-circle"></i>
-                </div>
-                <h3>Appointment Confirmed!</h3>
-                <p>Your appointment has been confirmed</p>
-                <p class="appointment-details">Nov 19, 2pm</p>
-                <button class="ok-btn" onclick="closeConfirmation()">OK</button>
-            </div>
         </div>
     </div>
-    
-    <script>
-        function showConfirmation() {
-            document.getElementById('confirmationPopup').style.display = 'flex';
-        }
+
+    <div class="appointment-form-container">
+        <h1 class="page-title">
+            <i class="fas fa-calendar-plus"></i> Book Appointment
+        </h1>
         
-        function closeConfirmation() {
-            document.getElementById('confirmationPopup').style.display = 'none';
-        }
+        <!-- Service Type -->
+        <div class="form-group">
+            <label><i class="fas fa-stethoscope"></i> Select Service Type:</label>
+            <div class="radio-group">
+                <label class="radio-option">
+                    <input type="radio" name="service" value="vet" checked>
+                    <span class="radio-custom"></span>
+                    <span><i class="fas fa-user-md"></i> Vet Appointment</span>
+                </label>
+                <label class="radio-option">
+                    <input type="radio" name="service" value="grooming">
+                    <span class="radio-custom"></span>
+                    <span><i class="fas fa-scissors"></i> Grooming</span>
+                </label>
+            </div>
+        </div>
+        
+        <!-- Provider Selection -->
+        <div class="form-group">
+            <label><i class="fas fa-clinic-medical"></i> Choose Provider:</label>
+            <select>
+                <option>Richmond Hill Petcare</option>
+                <option>North York Petcare</option>
+                <option>Toronto Pet Care</option>
+            </select>
+        </div>
+        
+        <!-- Date & Time -->
+        <div class="form-group">
+            <div class="form-row">
+                <div>
+                    <label><i class="fas fa-calendar-alt"></i> Choose a Date:</label>
+                    <input type="date">
+                </div>
+                <div>
+                    <label><i class="fas fa-clock"></i> Select Time:</label>
+                    <select>
+                        <option>9:00 AM</option>
+                        <option>10:00 AM</option>
+                        <option>11:00 AM</option>
+                        <option>1:00 PM</option>
+                        <option>2:00 PM</option>
+                        <option>3:00 PM</option>
+                        <option>4:00 PM</option>
+                        <option>5:00 PM</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Special Notes -->
+        <div class="form-group">
+            <label><i class="fas fa-edit"></i> Special Notes:</label>
+            <textarea rows="4" placeholder="Any special instructions or concerns..."></textarea>
+        </div>
+        
+        <!-- Confirm Button -->
+        <button class="confirm-btn" onclick="alert('Appointment booked successfully!'); window.location.href='calendar_and_reminders.html'">
+            <i class="fas fa-calendar-check"></i> Book Appointment
+        </button>
+        
+        <!-- Back link -->
+        <div style="text-align: center; margin-top: 20px;">
+            <a href="dashboard.html" style="color: #4a90e2; text-decoration: none;">
+                <i class="fas fa-arrow-left"></i> Back to Dashboard
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Simple radio button interaction feedback
+        document.querySelectorAll('.radio-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from all options
+                document.querySelectorAll('.radio-option').forEach(opt => {
+                    opt.style.background = '#f8f9fa';
+                    opt.style.borderColor = '#e0e0e0';
+                });
+                
+                // Add selected style to clicked option
+                this.style.background = '#e3f2fd';
+                this.style.borderColor = '#4a90e2';
+                
+                // Check the radio button
+                const radioInput = this.querySelector('input[type="radio"]');
+                radioInput.checked = true;
+            });
+        });
+        
+        // Set default date to today
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            const dateInput = document.querySelector('input[type="date"]');
+            if (dateInput) {
+                dateInput.value = today;
+                dateInput.min = today;
+            }
+            
+            // Set initial selected style for vet option
+            document.querySelector('.radio-option input[type="radio"]:checked')
+                .closest('.radio-option').style.background = '#e3f2fd';
+            document.querySelector('.radio-option input[type="radio"]:checked')
+                .closest('.radio-option').style.borderColor = '#4a90e2';
+        };
     </script>
 </body>
 </html>
