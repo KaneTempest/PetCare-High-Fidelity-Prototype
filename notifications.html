@@ -5,30 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetCare+ | Notifications</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="notifications-page">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <div class="container">
-            <a class="navbar-brand border border-dark p-2" href="dashboard.html"><strong>PetCare+</strong></a>
-            <a href="login.html" class="btn btn-outline-dark rounded-pill ml-auto">Logout</a>
+    <!-- Custom Navigation Bar -->
+    <nav class="custom-navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-paw"></i>
+                <a href="dashboard.html">PetCare+</a>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fas fa-th-large"></i> Dashboard
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <i class="fas fa-paw"></i> Profile
+                </a>
+                <a href="calendar_and_reminders.html" class="nav-item">
+                    <i class="fas fa-calendar-alt"></i> Calendar
+                </a>
+                <a href="notifications.html" class="nav-item active">
+                    <i class="fas fa-bell"></i> Notifications
+                </a>
+                <a href="appointment.html" class="nav-item">
+                    <i class="fas fa-calendar-check"></i> Appointment
+                </a>
+            </div>
+            
+            <div class="nav-user">
+                <span>Bahar</span>
+                <a href="login.html" class="nav-logout">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+            </div>
         </div>
     </nav>
 
     <main class="container mt-4">
-    <div class="d-flex align-items-center justify-content-between mb-4 header-row">
+        
+        <div class="d-flex align-items-center justify-content-between mb-4 header-row">
             <div class="d-flex align-items-center">
                 <a href="dashboard.html" class="text-dark mr-3 back-arrow" title="Go Back">
-                    &#8592; </a>
+                    <i class="fas fa-arrow-left"></i>
+                </a>
                 
-                <img src="https://www.svgrepo.com/show/31480/notification-bell.svg" alt="Notification Bell" width="40" height="40" class="mr-3">
+                <svg width="40" height="40" viewBox="0 0 16 16" class="bi bi-bell mr-3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2z"/>
+                    <path fill-rule="evenodd" d="M8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
+                </svg>
 
                 <h1 class="display-5">Notifications</h1>
             </div>
             
             <div>
-                <a href="#" class="text-dark mark-read-link">Mark all as read</a>
+                <a href="#" class="text-dark mark-read-link">
+                    <i class="fas fa-check-double"></i> Mark all as read
+                </a>
             </div>
         </div>
 
@@ -42,43 +78,56 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="align-middle font-weight-bold">Grooming</td>
-                        <td class="align-middle">Oct 31, 12pm</td>
+                    <tr class="notification-unread">
+                        <td class="align-middle font-weight-bold">
+                            <i class="fas fa-scissors text-primary"></i> Grooming
+                        </td>
+                        <td class="align-middle">
+                            <strong>Pepper's Haircut</strong><br>
+                            Oct 31, 12pm<br>
+                            <small class="text-muted">Richmond Hill Petcare</small>
+                        </td>
                         <td class="align-middle">
                             <div class="action-buttons">
-                                <button class="btn btn-outline-dark rounded-pill btn-sm mr-1">View</button>
+                                <a href="calendar_and_reminders.html" class="btn btn-outline-dark rounded-pill btn-sm mr-1">View</a>
                                 <button class="btn btn-outline-secondary rounded-pill btn-sm mr-1">Dismiss</button>
-                                <div class="w-100 d-block d-md-none mb-1"></div> <button class="btn btn-outline-dark rounded-pill btn-sm mt-1 mt-md-0">Reschedule</button>
+                                <a href="appointment.html" class="btn btn-outline-dark rounded-pill btn-sm mt-1 mt-md-0">Reschedule</a>
                             </div>
                         </td>
                     </tr>
                     
-                    <tr>
-                        <td class="align-middle font-weight-bold">Vet</td>
-                        <td class="align-middle">Nov 19, 2pm</td>
+                    <tr class="notification-unread">
+                        <td class="align-middle font-weight-bold">
+                            <i class="fas fa-user-md text-success"></i> Vet
+                        </td>
+                        <td class="align-middle">
+                            <strong>Annual Checkup</strong><br>
+                            Nov 19, 2pm<br>
+                            <small class="text-muted">Dr. Smith - Richmond Hill</small>
+                        </td>
                         <td class="align-middle">
                             <div class="action-buttons">
-                                <button class="btn btn-outline-dark rounded-pill btn-sm mr-1">View</button>
+                                <a href="calendar_and_reminders.html" class="btn btn-outline-dark rounded-pill btn-sm mr-1">View</a>
                                 <button class="btn btn-outline-secondary rounded-pill btn-sm mr-1">Dismiss</button>
-                                <div class="w-100 d-block d-md-none mb-1"></div>
-                                <button class="btn btn-outline-dark rounded-pill btn-sm mt-1 mt-md-0">Reschedule</button>
+                                <a href="appointment.html" class="btn btn-outline-dark rounded-pill btn-sm mt-1 mt-md-0">Reschedule</a>
                             </div>
                         </td>
                     </tr>
 
                     <tr>
-                        <td class="align-middle font-weight-bold">Medication</td>
+                        <td class="align-middle font-weight-bold">
+                            <i class="fas fa-pills text-warning"></i> Medication
+                        </td>
                         <td class="align-middle">
-                            Flea medication<br>
-                            <span class="text-muted">Nov 28, 8am</span>
+                            <strong>Flea medication</strong><br>
+                            Nov 28, 8am<br>
+                            <small class="text-muted">Monthly treatment</small>
                         </td>
                         <td class="align-middle">
                             <div class="action-buttons">
-                                <button class="btn btn-outline-dark rounded-pill btn-sm mr-1">View</button>
+                                <a href="calendar_and_reminders.html" class="btn btn-outline-dark rounded-pill btn-sm mr-1">View</a>
                                 <button class="btn btn-outline-secondary rounded-pill btn-sm mr-1">Dismiss</button>
-                                <div class="w-100 d-block d-md-none mb-1"></div>
-                                <button class="btn btn-outline-dark rounded-pill btn-sm mt-1 mt-md-0">Reschedule</button>
+                                <button class="btn btn-outline-dark rounded-pill btn-sm mt-1 mt-md-0">Snooze</button>
                             </div>
                         </td>
                     </tr>
@@ -88,10 +137,32 @@
 
     </main>
 
-    <footer class="footer mt-auto py-3 bg-light border-top fixed-bottom-md">
+    <!-- Bottom Navigation for mobile -->
+    <div class="mobile-bottom-nav d-md-none">
+        <a href="dashboard.html" class="mobile-nav-item">
+            <i class="fas fa-th-large"></i> Dashboard
+        </a>
+        <a href="profile.html" class="mobile-nav-item">
+            <i class="fas fa-paw"></i> Profile
+        </a>
+        <a href="calendar_and_reminders.html" class="mobile-nav-item">
+            <i class="fas fa-calendar"></i> Calendar
+        </a>
+        <a href="notifications.html" class="mobile-nav-item active">
+            <i class="fas fa-bell"></i> Alerts
+        </a>
+        <a href="appointment.html" class="mobile-nav-item">
+            <i class="fas fa-plus-circle"></i> Book
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-light border-top d-none d-md-block">
         <div class="container text-center">
             <nav class="nav justify-content-center">
-                <a class="nav-link text-blue footer-link" href="#">Dashboard</a>
+                <a class="nav-link text-blue footer-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link text-blue footer-link" href="profile.html">Profile</a>
+                <a class="nav-link text-blue footer-link" href="calendar_and_reminders.html">Calendar</a>
                 <a class="nav-link text-blue footer-link" href="#">Contact Us</a>
                 <a class="nav-link text-blue footer-link" href="#">About</a>
                 <a class="nav-link text-blue footer-link" href="#">Help</a>
@@ -103,7 +174,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-
 </html>
-
-
