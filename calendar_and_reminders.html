@@ -5,20 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetCare+ | Calendar & Reminders</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Navigation styles */
+        .nav-bar {
+            background: #f8f9fa;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 15px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .nav-links a:hover {
+            background: #e9ecef;
+        }
+        .nav-links a.active {
+            background: #007bff;
+            color: white;
+        }
+        .nav-user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .calendar-table {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .calendar-table th {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .calendar-table td {
+            height: 100px;
+            vertical-align: top;
+            padding: 10px;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-        <div class="container">
-            <a class="navbar-brand border border-dark p-2" href="dashboard.html"><strong>PetCare+</strong></a>
-            <a href="login.html" class="btn btn-outline-dark rounded-pill ml-auto">Logout</a>
+    <!-- Navigation Bar -->
+    <div class="nav-bar">
+        <div class="nav-logo">
+            <i class="fas fa-paw"></i>
+            <span>PetCare+</span>
         </div>
-    </nav>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Profile</a>
+            <a href="appointment.html">Appointment</a>
+            <a href="calendar_and_reminders.html" class="active">Calendar</a>
+            <a href="notifications.html">Notifications</a>
+        </div>
+        <div class="nav-user">
+            <span>Bahar</span>
+            <a href="login.html" style="color: #dc3545; text-decoration: none;">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </div>
 
     <main class="container mt-4">
         <div class="text-center mb-4">
-            <h1 class="display-5">Calendar & Reminders</h1>
+            <h1 class="display-5"><i class="fas fa-calendar-alt"></i> Calendar & Reminders</h1>
             <h3 class="month-header mt-3">NOVEMBER 2025</h3>
         </div>
 
@@ -108,35 +181,27 @@
         <div class="row mt-4 mb-5">
             <div class="col-md-8">
                 <ul class="list-unstyled event-legend">
-                    <li><strong>Nov 19</strong> &rightarrow; Pepper's Vet appointment</li>
-                    <li><strong>Oct 31</strong> &rightarrow; Pepper's Haircut</li>
-                    <li><strong>Nov 28</strong> &rightarrow; Flea medication reminder</li>
+                    <li><strong>Nov 19</strong> → Pepper's Vet appointment</li>
+                    <li><strong>Oct 31</strong> → Pepper's Haircut</li>
+                    <li><strong>Nov 28</strong> → Flea medication reminder</li>
                 </ul>
             </div>
             <div class="col-md-4 d-flex align-items-center justify-content-md-end">
                 <button type="button" class="btn btn-outline-dark rounded-pill px-4" data-toggle="modal" data-target="#reminderModal">
-                    Add Reminder
+                    <i class="fas fa-plus"></i> Add Reminder
                 </button>
+                <a href="appointment.html" class="btn btn-primary rounded-pill px-4 ml-2">
+                    <i class="fas fa-calendar-plus"></i> Book Appointment
+                </a>
             </div>
         </div>
     </main>
-
-    <footer class="footer mt-auto py-3 bg-light border-top">
-        <div class="container text-center">
-            <nav class="nav justify-content-center">
-                <a class="nav-link text-blue footer-link" href="#">Dashboard</a>
-                <a class="nav-link text-blue footer-link" href="#">Contact Us</a>
-                <a class="nav-link text-blue footer-link" href="#">About</a>
-                <a class="nav-link text-blue footer-link" href="#">Help</a>
-            </nav>
-        </div>
-    </footer>
 
     <div class="modal fade" id="reminderModal" tabindex="-1" role="dialog" aria-labelledby="reminderModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="reminderModalLabel">Add New Reminder</h5>
+                    <h5 class="modal-title" id="reminderModalLabel"><i class="fas fa-bell"></i> Add New Reminder</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -157,8 +222,15 @@
                                 <input type="time" class="form-control" id="reminderTime">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="reminderPet">For Pet</label>
+                            <select class="form-control" id="reminderPet">
+                                <option>Pepper</option>
+                                <option>Other Pet</option>
+                            </select>
+                        </div>
                         <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="notificationCheck">
+                            <input type="checkbox" class="form-check-input" id="notificationCheck" checked>
                             <label class="form-check-label" for="notificationCheck">Enable Notification</label>
                         </div>
                     </form>
@@ -175,6 +247,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-
 </html>
-
