@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container appointment-page">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <i class="fas fa-paw"></i>
+                <span>PetCare</span>
+            </div>
+            <div class="header-title">Book Appointment</div>
+            <div class="logout">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </div>
+        </div>
+        
+        <!-- Appointment Form -->
+        <div class="appointment-form">
+            <!-- Service Type -->
+            <div class="form-section">
+                <h3><i class="fas fa-stethoscope"></i> Select Service Type:</h3>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="service" value="vet" checked>
+                        <span class="radio-label">
+                            <i class="fas fa-user-md"></i> Vet
+                        </span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="service" value="grooming">
+                        <span class="radio-label">
+                            <i class="fas fa-bath"></i> Grooming
+                        </span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Provider Selection -->
+            <div class="form-section">
+                <h3><i class="fas fa-clinic-medical"></i> Choose Provider</h3>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="provider" value="richmond" checked>
+                        <span class="radio-label">
+                            <i class="fas fa-map-marker-alt"></i> Richmond Hill Petcane
+                        </span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="provider" value="northyork">
+                        <span class="radio-label">
+                            <i class="fas fa-map-marker-alt"></i> North York Petcane
+                        </span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="provider" value="toronto">
+                        <span class="radio-label">
+                            <i class="fas fa-map-marker-alt"></i> Toronto Pet Care
+                        </span>
+                    </label>
+                </div>
+            </div>
+            
+            <!-- Date & Time -->
+            <div class="form-section">
+                <div class="form-row">
+                    <div class="form-group">
+                        <h3><i class="fas fa-calendar-alt"></i> Choose a Date:</h3>
+                        <input type="date" class="date-input">
+                    </div>
+                    <div class="form-group">
+                        <h3><i class="fas fa-clock"></i> Select Time:</h3>
+                        <select class="time-select">
+                            <option>9:00 AM</option>
+                            <option>10:00 AM</option>
+                            <option>11:00 AM</option>
+                            <option>1:00 PM</option>
+                            <option>2:00 PM</option>
+                            <option>3:00 PM</option>
+                            <option>4:00 PM</option>
+                            <option>5:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Special Notes -->
+            <div class="form-section">
+                <h3><i class="fas fa-edit"></i> Special Notes:</h3>
+                <textarea class="notes-input" placeholder="message..."></textarea>
+            </div>
+            
+            <!-- Confirm Button -->
+            <div class="form-section">
+                <button class="confirm-btn" onclick="showConfirmation()">
+                    <i class="fas fa-calendar-check"></i> confirm
+                </button>
+            </div>
+        </div>
+        
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav appointment-nav">
+            <a href="profile.html" class="nav-link">
+                <i class="fas fa-th-large"></i> Dashboard
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-address-book"></i> Contact Us
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-info-circle"></i> About
+            </a>
+            <a href="#" class="nav-link">
+                <i class="fas fa-question-circle"></i> Help?
+            </a>
+        </div>
+        
+        <!-- Confirmation Popup (hidden by default) -->
+        <div class="confirmation-popup" id="confirmationPopup">
+            <div class="popup-content">
+                <div class="popup-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h3>Appointment Confirmed!</h3>
+                <p>Your appointment has been confirmed</p>
+                <p class="appointment-details">Nov 19, 2pm</p>
+                <button class="ok-btn" onclick="closeConfirmation()">OK</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showConfirmation() {
+            document.getElementById('confirmationPopup').style.display = 'flex';
+        }
+        
+        function closeConfirmation() {
+            document.getElementById('confirmationPopup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
