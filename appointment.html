@@ -8,24 +8,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container appointment-page">
+    <div class="page-wrapper">
         <!-- Header -->
-        <div class="header">
-            <div class="logo">
+        <div class="appointment-header">
+            <div class="appointment-logo">
                 <i class="fas fa-paw"></i>
                 <span>PetCare</span>
             </div>
-            <div class="header-title">Book Appointment</div>
-            <div class="logout">
+            <div class="appointment-title">Book Appointment</div>
+            <div class="appointment-logout">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </div>
         </div>
         
         <!-- Appointment Form -->
-        <div class="appointment-form">
+        <div class="appointment-form-container">
             <!-- Service Type -->
             <div class="form-section">
-                <h3><i class="fas fa-stethoscope"></i> Select Service Type:</h3>
+                <h3 class="section-title">
+                    <i class="fas fa-stethoscope"></i> Select Service Type:
+                </h3>
                 <div class="radio-group">
                     <label class="radio-option">
                         <input type="radio" name="service" value="vet" checked>
@@ -44,7 +46,9 @@
             
             <!-- Provider Selection -->
             <div class="form-section">
-                <h3><i class="fas fa-clinic-medical"></i> Choose Provider</h3>
+                <h3 class="section-title">
+                    <i class="fas fa-clinic-medical"></i> Choose Provider
+                </h3>
                 <div class="radio-group">
                     <label class="radio-option">
                         <input type="radio" name="provider" value="richmond" checked>
@@ -71,11 +75,11 @@
             <div class="form-section">
                 <div class="form-row">
                     <div class="form-group">
-                        <h3><i class="fas fa-calendar-alt"></i> Choose a Date:</h3>
+                        <label><i class="fas fa-calendar-alt"></i> Choose a Date:</label>
                         <input type="date" class="date-input">
                     </div>
                     <div class="form-group">
-                        <h3><i class="fas fa-clock"></i> Select Time:</h3>
+                        <label><i class="fas fa-clock"></i> Select Time:</label>
                         <select class="time-select">
                             <option>9:00 AM</option>
                             <option>10:00 AM</option>
@@ -92,7 +96,9 @@
             
             <!-- Special Notes -->
             <div class="form-section">
-                <h3><i class="fas fa-edit"></i> Special Notes:</h3>
+                <h3 class="section-title">
+                    <i class="fas fa-edit"></i> Special Notes:
+                </h3>
                 <textarea class="notes-input" placeholder="message..."></textarea>
             </div>
             
@@ -105,22 +111,22 @@
         </div>
         
         <!-- Bottom Navigation -->
-        <div class="bottom-nav appointment-nav">
-            <a href="profile.html" class="nav-link">
+        <div class="appointment-bottom-nav">
+            <a href="profile.html" class="appointment-nav-link">
                 <i class="fas fa-th-large"></i> Dashboard
             </a>
-            <a href="#" class="nav-link">
+            <a href="#" class="appointment-nav-link">
                 <i class="fas fa-address-book"></i> Contact Us
             </a>
-            <a href="#" class="nav-link">
+            <a href="#" class="appointment-nav-link">
                 <i class="fas fa-info-circle"></i> About
             </a>
-            <a href="#" class="nav-link">
+            <a href="#" class="appointment-nav-link">
                 <i class="fas fa-question-circle"></i> Help?
             </a>
         </div>
         
-        <!-- Confirmation Popup (hidden by default) -->
+        <!-- Confirmation Popup -->
         <div class="confirmation-popup" id="confirmationPopup">
             <div class="popup-content">
                 <div class="popup-icon">
