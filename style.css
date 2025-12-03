@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F5F7FB; 
+    color: #333;
+}
+
+/* Links */ 
+a {
+    color: #4379D0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.page-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.top-banner {
+    background-color: #FFFFFF; 
+    border-bottom: 1px solid #E0E6ED;
+    padding: 25px;
+    position: relative;
+    text-align: center;
+}
+
+.logo-box {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.login-title {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    color: #2F4B7C; 
+}
+
+/* Login Layout */
+
+.login-container {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border: 1px solid #E0E6ED;
+    padding: 30px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05); 
+}
+
+/* Left + Right Columns */
+
+.left-side {
+    flex: 1.1;
+}
+
+.right-side {
+    flex: 0.9;
+    border-left: 1px solid #E0E6ED;
+    padding-left: 20px;
+}
+
+/* Headings */
+
+.section-title {
+    margin-top: 0;
+    font-size: 22px;
+    color: #2F4B7C;
+}
+
+.right-title {
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2F4B7C;
+}
+
+/* Form fields */
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #B9C4D4;
+    background: white;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4379D0;
+    box-shadow: 0 0 4px #4379D0;
+}
+
+.small {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+/* Login Button */
+
+.login-btn {
+    display: inline-block;
+    background-color: #4379D0;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: #2F4B7C;
+}
+
+/* Feature bullets */
+
+.feature-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Footer */
+
+.main-footer {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E0E6ED;
+}
+
+.main-footer a {
+    margin: 0 10px;
+    color: #4379D0;
+}
